@@ -1,0 +1,84 @@
+:root {
+    --PrimaryColor: #0073a8;
+    --SecondaryColor: #10b5cb;
+    --gradientColor: linear-gradient(to right, #10b5cb, #0073a8);
+    --whiteColor: #fff;
+    --blackColor: #1b2d36;
+    --textColor: #58585f;
+    --whiteColorDeam: #ededed;
+    --greyText: rgb(190, 190, 190);
+    --inputColor: rgb(239, 239, 239);
+    --bodyColor: rgb(240, 240, 246);
+    --cardBG: rgb(225, 225, 225);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.section {
+    padding: 4rem 0 2rem;
+}
+
+.container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.icon {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+    align-items: center;
+}
+
+.btn {
+    padding: 0.6rem 1.5rem;
+    background: var(--gradientColor);
+    border-radius: 3rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    & a {
+        color: var(--whiteColor);
+        font-weight: 500;
+    }
+
+    &:hover {
+        background: var(--SecondaryColor);
+    }
+}
+
+img,
+video {
+    width: 100%;
+    height: auto;
+}
+
+input {
+    font-size: 100%;
+}
+
+body {
+    background: var(--bodyColor);
+}
