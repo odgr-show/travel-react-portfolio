@@ -1,9 +1,18 @@
 // import React from "react";
+import { useEffect } from "react";
+
 import img from "../../../public/images/img(1).jpg";
 import img2 from "../../../public/images/img(2).jpg";
+import img3 from "../../../public/images/img(3).jpg";
+import img4 from "../../../public/images/img(4).jpg";
+import img5 from "../../../public/images/img(5).jpg";
+import img6 from "../../../public/images/img(6).jpg";
 
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { HiOutlineClipboardCheck } from "react-icons/hi";
+
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 import "./main.scss";
 
@@ -11,8 +20,8 @@ const Data = [
     {
         id: 1,
         imgSrc: img,
-        destTitle: "京都",
-        location: "清水",
+        destTitle: "清水",
+        location: "京都",
         grade: "CULTURAL RELAX",
         fees: "$700",
         description:
@@ -22,57 +31,57 @@ const Data = [
     {
         id: 2,
         imgSrc: img2,
-        destTitle: "北海道",
-        location: "五稜郭",
+        destTitle: "五稜郭",
+        location: "北海道",
         grade: "CULTURAL RELAX",
         fees: "$700",
         description:
             "The epitome of romance, Bora is one of the best travel destinations in the World. This place is known for its luxurious stays and adventurous activities. ",
     },
 
-    // {
-    //     id: 3,
-    //     imgSrc: img3,
-    //     destTitle: "Bora Bora",
-    //     location: "New Zealand",
-    //     grade: "CULTURAL RELAX",
-    //     fees: "$700",
-    //     description:
-    //         "The epitome of romance, Bora is one of the best travel destinations in the World. This place is known for its luxurious stays and adventurous activities. ",
-    // },
+    {
+        id: 3,
+        imgSrc: img3,
+        destTitle: "東京駅",
+        location: "東京",
+        grade: "CULTURAL RELAX",
+        fees: "$700",
+        description:
+            "The epitome of romance, Bora is one of the best travel destinations in the World. This place is known for its luxurious stays and adventurous activities. ",
+    },
 
-    // {
-    //     id: 4,
-    //     imgSrc: img4,
-    //     destTitle: "Bora Bora",
-    //     location: "New Zealand",
-    //     grade: "CULTURAL RELAX",
-    //     fees: "$700",
-    //     description:
-    //         "The epitome of romance, Bora is one of the best travel destinations in the World. This place is known for its luxurious stays and adventurous activities. ",
-    // },
+    {
+        id: 4,
+        imgSrc: img4,
+        destTitle: "みなとみらい",
+        location: "横浜",
+        grade: "CULTURAL RELAX",
+        fees: "$700",
+        description:
+            "The epitome of romance, Bora is one of the best travel destinations in the World. This place is known for its luxurious stays and adventurous activities. ",
+    },
 
-    // {
-    //     id: 5,
-    //     imgSrc: img5,
-    //     destTitle: "Bora Bora",
-    //     location: "New Zealand",
-    //     grade: "CULTURAL RELAX",
-    //     fees: "$700",
-    //     description:
-    //         "The epitome of romance, Bora is one of the best travel destinations in the World. This place is known for its luxurious stays and adventurous activities. ",
-    // },
+    {
+        id: 5,
+        imgSrc: img5,
+        destTitle: "富士山",
+        location: "山梨",
+        grade: "CULTURAL RELAX",
+        fees: "$700",
+        description:
+            "The epitome of romance, Bora is one of the best travel destinations in the World. This place is known for its luxurious stays and adventurous activities. ",
+    },
 
-    // {
-    //     id: 6,
-    //     imgSrc: img6,
-    //     destTitle: "Bora Bora",
-    //     location: "New Zealand",
-    //     grade: "CULTURAL RELAX",
-    //     fees: "$700",
-    //     description:
-    //         "The epitome of romance, Bora is one of the best travel destinations in the World. This place is known for its luxurious stays and adventurous activities. ",
-    // },
+    {
+        id: 6,
+        imgSrc: img6,
+        destTitle: "名古屋城",
+        location: "名古屋",
+        grade: "CULTURAL RELAX",
+        fees: "$700",
+        description:
+            "The epitome of romance, Bora is one of the best travel destinations in the World. This place is known for its luxurious stays and adventurous activities. ",
+    },
 
     // {
     //     id: 7,
@@ -109,9 +118,13 @@ const Data = [
 ];
 
 export const Main = () => {
+    useEffect(() => {
+        Aos.init({ duration: 2000 });
+    }, []);
+
     return (
         <section className="main container section">
-            <div className="secTitle">
+            <div data-aos="fade-right" className="secTitle">
                 <h3 className="title">Most visited destinations</h3>
             </div>
 
@@ -127,7 +140,11 @@ export const Main = () => {
                         description,
                     }) => {
                         return (
-                            <div key={id} className="singleDestination">
+                            <div
+                                key={id}
+                                data-aos="fade-up"
+                                className="singleDestination"
+                            >
                                 <div className="imageDiv">
                                     <img src={imgSrc} alt={destTitle} />
                                 </div>

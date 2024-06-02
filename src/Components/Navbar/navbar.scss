@@ -21,10 +21,14 @@
     align-items: center;
     background: var(--whiteColorDeam);
     width: 100%;
-    padding: 1rem;
+    padding: 1.5rem 2rem;
     box-shadow: 0 2px 4px rgba(2, 15, 29, 0.904);
 
     z-index: 1000;
+
+    // @include mq("md") {
+    //     padding: 1rem;
+    // }
 
     .logo {
         justify-content: center;
@@ -40,8 +44,8 @@
         }
     }
 
-    @include mq("md") {
-        .navBar {
+    .navBar {
+        @include mq("md") {
             position: absolute;
             top: -500rem;
             left: 50%;
@@ -59,59 +63,87 @@
             &.activeNavbar {
                 top: 7rem;
             }
+        }
 
-            .navLists {
+        .navLists {
+            justify-content: center;
+            flex-direction: row;
+            width: 100%;
+            margin: auto;
+            padding: 0.5rem 0;
+
+            @include mq("md") {
                 flex-direction: column;
-                justify-content: center;
-                width: 100%;
-                margin: auto;
+            }
+
+            .navItem {
                 padding: 0.5rem 0;
 
-                .navItem {
-                    padding: 0.5rem 0;
+                .navLink {
+                    color: var(--textColor);
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                    padding: 0 0.45rem;
 
-                    .navLink {
-                        color: var(--textColor);
-                        font-size: 0.9rem;
+                    @include mq("md") {
                         font-weight: 600;
-
-                        &:hover {
-                            color: var(--PrimaryColor);
-                        }
                     }
-                }
 
-                .btn {
-                    margin-top: 1rem;
-
-                    a {
-                        font-weight: 600;
-                        color: var(--whiteColor);
+                    &:hover {
+                        color: var(--PrimaryColor);
                     }
                 }
             }
 
-            .closeNavbar {
-                position: absolute;
-                top: 1rem;
-                right: 1.5rem;
-                color: var(--PrimaryColor);
+            .btn {
+                margin-left: 1rem;
 
-                &:hover {
-                    color: var(--SecondaryColor);
+                @include mq("md") {
+                    margin-top: 1em;
+                }
+
+                a {
+                    font-weight: 500;
+                    color: var(--whiteColor);
+
+                    @include mq("md") {
+                        font-weight: 600;
+                    }
                 }
             }
         }
     }
+}
 
-    .toggleNavbar {
-        .icon {
-            font-size: 25px;
-            color: var(--PrimaryColor);
+.closeNavbar {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    display: none;
+    color: var(--PrimaryColor);
 
-            &:hover {
-                color: var(--SecondaryColor);
-            }
+    @include mq("md") {
+        display: block;
+    }
+
+    &:hover {
+        color: var(--SecondaryColor);
+    }
+}
+
+.toggleNavbar {
+    display: none;
+
+    @include mq("md") {
+        display: block;
+    }
+
+    .icon {
+        font-size: 25px;
+        color: var(--PrimaryColor);
+
+        &:hover {
+            color: var(--SecondaryColor);
         }
     }
 }
