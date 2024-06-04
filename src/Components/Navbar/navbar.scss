@@ -21,14 +21,14 @@
     align-items: center;
     background: var(--whiteColorDeam);
     width: 100%;
-    padding: 1.5rem 2rem;
+    padding: 1rem 8.5rem;
     box-shadow: 0 2px 4px rgba(2, 15, 29, 0.904);
 
     z-index: 1000;
 
-    // @include mq("md") {
-    //     padding: 1rem;
-    // }
+    @include mq("1239") {
+        padding: 1.5rem 2rem;
+    }
 
     .logo {
         justify-content: center;
@@ -45,7 +45,7 @@
     }
 
     .navBar {
-        @include mq("md") {
+        @include mq("768") {
             position: absolute;
             top: -500rem;
             left: 50%;
@@ -72,12 +72,16 @@
             margin: auto;
             padding: 0.5rem 0;
 
-            @include mq("md") {
+            @include mq("768") {
                 flex-direction: column;
             }
 
             .navItem {
-                padding: 0.5rem 0;
+                padding: 0 0.7rem;
+
+                @include mq("959") {
+                    padding: 0.5rem 0;
+                }
 
                 .navLink {
                     color: var(--textColor);
@@ -85,7 +89,7 @@
                     font-weight: 500;
                     padding: 0 0.45rem;
 
-                    @include mq("md") {
+                    @include mq("768") {
                         font-weight: 600;
                     }
 
@@ -98,7 +102,7 @@
             .btn {
                 margin-left: 1rem;
 
-                @include mq("md") {
+                @include mq("768") {
                     margin-top: 1em;
                 }
 
@@ -106,7 +110,7 @@
                     font-weight: 500;
                     color: var(--whiteColor);
 
-                    @include mq("md") {
+                    @include mq("768") {
                         font-weight: 600;
                     }
                 }
@@ -122,7 +126,7 @@
     display: none;
     color: var(--PrimaryColor);
 
-    @include mq("md") {
+    @include mq("768") {
         display: block;
     }
 
@@ -134,7 +138,7 @@
 .toggleNavbar {
     display: none;
 
-    @include mq("md") {
+    @include mq("768") {
         display: block;
     }
 

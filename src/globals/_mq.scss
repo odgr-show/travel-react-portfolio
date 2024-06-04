@@ -4,14 +4,18 @@
 @use "functions" as *;
 
 $breakpoints: (
-    // 480px以上(スマホの横向き)のモニタで適用
-    "sm": "screen and (min-width: #{to-em(480px, 16px)})",
-    // 768px以上のタブレットやモニタで適用
-    "md": "screen and (max-width: #{to-em(768px, 16px)})",
-    // 960px以上のモニタで適用
-    "lg": "screen and (min-width: #{to-em(960px, 16px)})",
-    // 1280px以上のモニタで適用
-    "xl": "screen and (min-width: #{to-em(1280px, 16px)})"
+    // 499以下のモニタで適用
+    "499": "screen and (max-width: #{to-em(499px, 16px)})",
+    // 659以下のモニタで適用
+    "659": "screen and (max-width: #{to-em(659px, 16px)})",
+    // 768px以下のモニタで適用
+    "768": "screen and (max-width: #{to-em(768px, 16px)})",
+    // 939px以下のモニタで適用
+    "939": "screen and (max-width: #{to-em(939px, 16px)})",
+    // 959px以下のモニタで適用
+    "959": "screen and (max-width: #{to-em(959px, 16px)})",
+    // 1239px以下のモニタで適用
+    "1239": "screen and (max-width: #{to-em(1239px, 16px)})"
 ) !default;
 
 @mixin mq($breakpoint: md) {

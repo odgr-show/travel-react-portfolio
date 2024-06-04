@@ -24,13 +24,7 @@ export const Footer = () => {
     return (
         <section className="footer">
             <div className="videoDiv">
-                <video
-                    src={video2}
-                    loop
-                    muted
-                    autoPlay
-                    type="video/mp4"
-                ></video>
+                <video src={video2} loop muted type="video/mp4"></video>
             </div>
 
             <div className="secContent container">

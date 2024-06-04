@@ -24,7 +24,7 @@ export const Home = () => {
     return (
         <section className="home">
             <div className="overlay"></div>
-            <video src={video} type="video/mp4" autoPlay muted loop></video>
+            <video src={video} type="video/mp4" muted loop></video>
 
             <div className="homeContent container">
                 <div className="textDiv">
