@@ -1,3 +1,5 @@
+@use "../../globals/" as *;
+
 :root {
     --PrimaryColor: #0073a8;
     --SecondaryColor: #10b5cb;
@@ -22,6 +24,7 @@
             width: max-content;
             color: var(--textColor);
             margin: 1rem 0;
+            font-size: fluid-text(18px, 24px);
 
             z-index: 2;
 
@@ -30,7 +33,7 @@
                 position: absolute;
                 right: 0;
                 bottom: 5px;
-                width: 120px;
+                width: fluid-text(115px, 155px);
                 height: 5px;
                 background: var(--SecondaryColor);
 
@@ -42,9 +45,17 @@
     .secContent {
         justify-content: center;
         gap: 1.5rem;
+        grid-template-columns: repeat(3, 1fr);
+
+        @include mq("840") {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include mq("499") {
+            grid-template-columns: none;
+        }
 
         .singleDestination {
-            height: 100%;
+            height: auto;
             display: grid;
             row-gap: 10px;
             align-items: center;
@@ -53,6 +64,10 @@
             background: var(--cardBG);
             box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
             overflow: hidden;
+
+            @include mq("499") {
+                height: 100%;
+            }
 
             &:hover {
                 background: var(--cardHover);

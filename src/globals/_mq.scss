@@ -4,16 +4,20 @@
 @use "functions" as *;
 
 $breakpoints: (
-    // 499以下のモニタで適用
+    // 500以下のモニタで適用
     "499": "screen and (max-width: #{to-em(499px, 16px)})",
-    // 659以下のモニタで適用
+    // 660以下のモニタで適用
     "659": "screen and (max-width: #{to-em(659px, 16px)})",
-    // 768px以下のモニタで適用
+    // 769px以下のモニタで適用
     "768": "screen and (max-width: #{to-em(768px, 16px)})",
-    // 939px以下のモニタで適用
+    // 840px以下のモニタで適用
+    "840": "screen and (max-width: #{to-em(839px, 16px)})",
+    // 940px以下のモニタで適用
     "939": "screen and (max-width: #{to-em(939px, 16px)})",
     // 959px以下のモニタで適用
     "959": "screen and (max-width: #{to-em(959px, 16px)})",
+    // 1024px以下のモニタで適用
+    "1023": "screen and (max-width: #{to-em(1023px, 16px)})",
     // 1239px以下のモニタで適用
     "1239": "screen and (max-width: #{to-em(1239px, 16px)})"
 ) !default;

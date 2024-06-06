@@ -46,7 +46,7 @@ li {
     margin: auto !important;
 
     @include mq("1239") {
-        width: 100% !important;
+        width: 90% !important;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
     }

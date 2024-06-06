@@ -1,3 +1,5 @@
+@use "../../globals/" as *;
+
 :root {
     --PrimaryColor: #0073a8;
     --SecondaryColor: #10b5cb;
@@ -54,8 +56,12 @@
 
         .contactDiv {
             justify-content: space-between;
-            flex-direction: column;
+            flex-direction: row;
             gap: 1rem;
+
+            @include mq("659") {
+                flex-direction: column;
+            }
 
             .text {
                 small {
@@ -71,18 +77,28 @@
             }
 
             .inputDiv {
-                width: 100%;
+                width: max-content;
                 gap: 1rem;
-                flex-direction: column;
+                flex-direction: row;
+
+                @include mq("659") {
+                    width: 100%;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                }
 
                 input {
-                    width: 100%;
+                    width: 60%;
                     padding: 0.5rem 0.6rem;
                     border-radius: 3rem;
                     border: 1px solid var(--whiteColor);
                     outline: none;
                     background: transparent;
                     color: var(--whiteColor);
+
+                    @include mq("659") {
+                        width: 100%;
+                    }
 
                     &::placeholder {
                         color: var(--whiteColor);
@@ -92,11 +108,15 @@
             }
 
             .btn {
-                width: 100%;
+                width: max-content;
                 justify-content: center;
                 color: var(--whiteColor);
                 font-weight: 500;
                 gap: 0.5rem;
+
+                @include mq("659") {
+                    width: 100%;
+                }
 
                 .icon {
                     font-size: 18px;
@@ -110,11 +130,15 @@
             align-items: flex-start;
             flex-direction: column;
             width: 100%;
-            padding: 1rem 1rem 4rem;
+            padding: 3rem 1rem;
             gap: 2rem;
             border-radius: 1rem;
             background: var(--bodyColor);
             overflow: hidden;
+
+            @include mq("1023") {
+                padding: 1rem 1rem 4rem;
+            }
 
             .footerIntro {
                 flex-basis: 50%;
@@ -159,8 +183,14 @@
                 flex-basis: 50%;
                 width: 100%;
                 gap: 1rem;
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(3, 1fr);
                 justify-content: space-between;
+                padding-bottom: 1rem;
+
+                @include mq("499") {
+                    grid-template-columns: repeat(2, 1fr);
+                    padding-bottom: 0;
+                }
 
                 .linkGroup {
                     .groupTitle {
@@ -197,12 +227,18 @@
                 bottom: 0;
                 left: 0;
                 right: 0;
-                flex-direction: column;
+                justify-content: space-between;
+                flex-direction: row;
                 background: var(--SecondaryColor);
                 padding: 0.5rem 2rem;
 
+                @include mq("499") {
+                    justify-content: center;
+                    flex-direction: column;
+                }
+
                 small {
-                    font-size: 10px;
+                    font-size: fluid-text(10px, 14px);
                     color: var(--whiteColor);
 
                     &:nth-child(2) {
